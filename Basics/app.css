@@ -1,0 +1,48 @@
+body {
+    background-color: white;
+    color: #000 !important;
+}
+
+.enrollment-form{
+    border: 1px solid #ccc;
+    width: 600px;
+    margin: 0px auto;
+    padding:20px;
+}
+
+.form-group{
+    padding-bottom: 5px;
+}
+
+.form-group label{
+    min-width: 100px;
+    /* background-color: rebeccapurple; */
+    display: inline-block;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select{
+    padding: 5px;
+}
+
+.btn{
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #fff
+}
+
+.btn-reset{
+    background-color: blue;
+}
+
+.btn-cancel{
+    background-color: gray;
+}
+
+.btn-save{
+    background-color: green;
+}
+
+.form-btn{
+    text-align: right;
+}

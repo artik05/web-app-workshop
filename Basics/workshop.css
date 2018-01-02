@@ -1,0 +1,63 @@
+body
+{
+    background-color: white;
+}
+.Workshop-form
+{
+    border: 1px solid #ccc;
+    width: 800px;
+    margin-right: 20px;
+    padding:20px;
+}
+
+.heading{
+	background-color:green;
+	color:white;
+	    padding: 10px 5px;
+		font-weight:bold;
+		margin-bottom:10px;
+}
+.form-group
+{
+    padding-bottom: 5px;
+}
+.form-group label
+{
+    min-width: 175px;
+    display: inline-block;
+    font-weight: bold;
+}
+.form-group input, .form-group select
+{
+    padding: 5px;
+}
+.form-btn{
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align:center;
+	background-color:#ccc;
+}
+.btn-submit
+{
+background-color: #92F3A8
+}
+.btn-reset
+{
+background-color: #92F3A8
+}
+
+.row{
+	width:100%;
+	display: flex;
+}
+.col{
+	width:100%;
+}
+.col-50{
+	width:50%;
+	float: left;
+}
+
+.chk-group{
+   display: inline-grid;
+}
