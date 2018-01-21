@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="addition.css"></link>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>Add two number</h1>
+        </div>
+        First Number :
+        <input type="text" id="Text1" name="TextBox1" onkeyup="check_integer()"> Second Number :
+        <input type="text" id="Text2" name="TextBox2">
+        <input type="button" name="clickbtn" value="ADD" onclick="add_number()" > Result:
+        <input type="text" id="txtresult" name="TextBox3" >
+    </div>
+	<div id="msg"></div>
+    <script type="text/javascript">
+        function add_number() {
+
+            var first_number = document.getElementById("Text1").value;
+            var second_number = document.getElementById("Text2").value;
+            var result = first_number + second_number;
+
+            document.getElementById("txtresult").value = result;
+        }
+        //function change_background() {
+            //.innerHTML.change_background = "red"
+            //document.getElementById("txtresult").style.border-color = "red";
+        //}
+		function check_integer(){
+		var result = document.getElementById("txtresult").value;
+		if(Number.isInteger(+result)){
+		document.getElementById("msg").innerHTML ="";
+		document.getElementById("Text1").style.border-color = "green";
+		}
+		
+		else{
+		document.getElementById("msg").innerHTML = "please enter numeric value";
+		document.getElementById("Text1").style.border-color = "red";
+		}
+		
+		}
+     
+    </script>
+</body>
+
+</html>

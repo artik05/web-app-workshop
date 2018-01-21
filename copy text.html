@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Email Validation</title>    
+    </head>
+        <body>
+            <div>
+               <h2>Copy Text</h2>
+				 Enter Value : <input type='text' name='Text' id="text"/><br>
+				 <button onclick="copy();">Copy</button>
+				 <input type="button" value="copy" onclick="copy();" />
+                  Copy Value : <input type='text' name='Text1' id="text1"/>
+            </div>
+        </body>
+	<script>
+	function copy(){
+	    var str = document.getElementById("text").value;  // reading
+	    
+		document.getElementById("text1").value = str;//writing
+	}
+	
+	</script>
+</html>
