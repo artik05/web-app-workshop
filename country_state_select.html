@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Country state select</title>   
+		<script>
+			
+			// we get from ajax request means server.			
+			
+			var countryList = [{ id : 100, name : 'India', abbr: 'IND'},
+			{ id : 101, name : 'Australia', abbr: 'AUS'},
+			{ id : 102, name : 'England', abbr: 'ENG'}
+			];
+			
+			var stateList = [{ id : 103, name : 'JHarkhand', countryId: 100},
+			{ id : 104, name : 'Bihar', countryId: 100},
+			{ id : 105, name : 'London', countryId: 102}
+			];
+			
+			function prepareCountryDropdown(){
+				var html = "<option>Select Country</option>";
+				
+				for(var i = 0; i < countryList.length; i++){
+				//  <option>Select State</option>
+					html = html + "<option value='" + countryList[i].id   +"'>" + countryList[i].name + "</option>";
+				}
+				
+				document.getElementById("countryDrpdown").innerHTML = html;
+			}
+			
+			function prepareStateDropdown(){
+				var html = "<option>Select State</option>";
+				
+				var countryID = document.getElementById("countryDrpdown").value;
+				
+				for(var i = 0; i < stateList.length; i++){
+				//  <option>Select State</option>
+					if(stateList[i].countryId == countryID){					   
+					   html = html + "<option value='" + stateList[i].id   +"'>" + stateList[i].name + "</option>";
+					}			
+				}
+				
+				document.getElementById("stateDrpdown").innerHTML = html;
+			}
+			
+			function onstateChange(){
+			    var countryID = document.getElementById("countryDrpdown").value;
+				var Stateid = document.getElementById("stateDrpdown").value;
+				
+				var selectedCountry = {};  // we created empty objects
+				var selectedState = {};
+				
+                for(var i = 0; i < countryList.length; i++){
+					if(countryList[i].id == countryID){
+					  selectedCountry = countryList[i]; // here we are saving selected country
+					}					
+				}	
+
+                for(var i = 0; i < stateList.length; i++){
+					if(stateList[i].id == Stateid){
+					  selectedState = stateList[i]; // here we are saving selected state
+					}					
+				}					
+				
+				document.getElementById("msg").innerHTML = selectedState.name + " belongs to - " + selectedCountry.name;				
+			}		 
+	
+		</script>		
+    </head>
+	<body onload="prepareCountryDropdown()";>
+		<div>
+		  <select name="countryDrpdown" id="countryDrpdown" onchange="prepareStateDropdown();">
+		  <!--  Inner html-->
+		  <option></option>
+		   <!--  append html-->
+		  </select>
+		</div>
+		<div>
+		   <select name="stateDrpdown" id="stateDrpdown" onchange="onstateChange()">
+		   <option>Select State</option>
+		  </select>
+		</div>
+		<div id="msg" ></div>
+	</body>	
+</html>
